@@ -2,7 +2,7 @@ import pygame
 
 def select_pack(screen):
     font = pygame.font.SysFont(None, 48)
-    packs = ['Фрукты', 'Овощи', 'Десерты']
+    packs = ['Фрутовий пак', 'Овочевий пак', 'Солодкий пак']
     selected_pack = None
     running = True
 
