@@ -4,6 +4,8 @@ import sys
 from button import Button
 from settings import Settings
 from menu import Menu
+from main_logic import GuessWhoGame
+from select_pack import select_pack
 
 class MainMenu:
     def __init__(self, screen):
@@ -12,18 +14,18 @@ class MainMenu:
         self.music_path = os.path.join("bg_music1.mp3")
 
         self.main_menu_buttons = [
-            Button("Play", (300, 200)),
-            Button("Options", (300, 280)),
-            Button("Credits", (300, 360)),
-            Button("Exit", (300, 440))
+            Button("Play", (1000, 200)),
+            Button("Options", (1000, 280)),
+            Button("Credits", (1000, 360)),
+            Button("Exit", (1000, 440))
         ]
 
         self.settings_menu_buttons = [
-            Button("Back", (300, 500))
+            Button("Back", (1000, 500))
         ]
 
         self.credits_menu_buttons = [
-            Button("Back", (300, 500))
+            Button("Back", (1000, 500))
         ]
 
         self.settings = Settings(screen)
@@ -85,7 +87,11 @@ class MainMenu:
 
     def handle_main_menu_click(self, button):
         if button.text == "Play":
-            print("Play!")
+            pack = select_pack(self.screen)
+            game = GuessWhoGame(self.screen, pack)
+            result = game.run()
+            if result == "menu":
+                self.current_menu = "main"
         elif button.text == "Options":
             self.current_menu = "settings"
             self.settings.activate()
