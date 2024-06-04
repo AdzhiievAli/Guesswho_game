@@ -21,7 +21,7 @@ class Menu:
         if self.background:
             self.screen.blit(self.background, (0, 0))
         else:
-            self.screen.fill((130, 206, 250))
+            self.screen.fill((135, 206, 250))
 
         if self.show_game_title:
             game_title_surface = self.game_title_font.render("GuessWho", True, (255, 255, 255))
