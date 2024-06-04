@@ -47,8 +47,8 @@ class GuessWhoGame:
         self.font = pygame.font.SysFont(None, 36)
         self.final_guess_button = pygame.Rect(800, 900, 200, 50)
         
-        self.question_button1 = QuestionButton(screen, (50, 0), (200, 50), questions)
-        self.question_button2 = QuestionButton(screen, (1550, 0), (200, 50), questions)
+        self.question_button1 = QuestionButton(screen, (300, 0), (200, 50), questions)
+        self.question_button2 = QuestionButton(screen, (1300, 0), (200, 50), questions)
 
     def switch_player(self):
         self.current_player = 2 if self.current_player == 1 else 1
