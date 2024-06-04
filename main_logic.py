@@ -98,12 +98,12 @@ class GuessWhoGame:
                             if event.key == pygame.K_RETURN:
                                 if text == guess.name:
                                     print(f'Player {self.current_player} wins!')
-                                    winner_text = self.font.render(f'Player {self.current_player} wins!', True, (0, 255, 0))
+                                    winner_text = self.font.render(f'Ігрок {self.current_player} Виграв цю битву!', True, (0, 255, 0))
                                 else:
                                     print(f'Player {self.current_player} loses!')
-                                    winner_text = self.font.render(f'Player {self.current_player} loses!', True, (255, 0, 0))
+                                    winner_text = self.font.render(f'Ігрок {self.current_player} Програв цю битву!', True, (255, 0, 0))
                                 self.screen.fill((255, 255, 255))
-                                self.screen.blit(winner_text, (960, 540))
+                                self.screen.blit(winner_text, (800, 540))
                                 pygame.display.flip()
                                 pygame.time.wait(3000)
                                 self.running = False
@@ -162,4 +162,5 @@ class GuessWhoGame:
             pygame.display.flip()
             self.clock.tick(60)
 
-        pygame.quit()
+        self.screen = pygame.display.set_mode((1920, 1080))
+        return "menu"
