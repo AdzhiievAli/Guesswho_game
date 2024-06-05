@@ -2,7 +2,7 @@ import pygame
 
 def select_pack(screen):
     font = pygame.font.SysFont(None, 48)
-    packs = ['Фрутовий пак', 'Овочевий пак', 'Солодкий пак']
+    packs = ['Фрутовий та ягідний пак', 'Овочевий пак', 'Солодкий пак']
     selected_pack = None
     running = True
 
@@ -26,7 +26,7 @@ def select_pack(screen):
                 for pack in packs:
                     rect = pygame.Rect((screen.get_width() // 2 - 100, y - 25, 200, 50))
                     if rect.collidepoint(event.pos):
-                        if pack == 'Фрутовий пак':
+                        if pack == 'Фрутовий та ягідний пак':
                             selected_pack = 'fruits_pack'
                         elif pack == 'Овочевий пак':
                             selected_pack = 'veg_pack'
