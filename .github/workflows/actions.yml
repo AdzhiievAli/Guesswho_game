@@ -26,7 +26,7 @@ jobs:
 
     - name: Run tests with pytest
       run: |
-        pytest tests.py --html=tests.html
+        pytest tests.py --html=report.html
 
     - name: Run Flake8
       continue-on-error: true
